@@ -1,0 +1,11 @@
+# Return a file containing all the even-numbered lines from the original sample file. Assume 1-based numbering of lines.
+
+f = open(r'rosalind_ini5.txt', 'r+')
+count = 1
+
+for line in f: 
+    if (count % 2 == 0):
+        print(line)
+    count = count + 1
+
+f.close()
