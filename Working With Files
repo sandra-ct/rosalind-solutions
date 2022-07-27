@@ -6,6 +6,6 @@ count = 1
 for line in f: 
     if (count % 2 == 0):
         print(line)
-    count = count + 1
+    count += 1
 
 f.close()
