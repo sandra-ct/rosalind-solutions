@@ -1,16 +1,17 @@
 with open(r"rosalind_rna.txt") as file:
-    transcript = {'T':'U'}
     dna = str(file.read())
-    rna = [""]
-    c = 0
 
-    for i in dna: 
+transcript = {'T':'U'}
+valid = ['C','G','T','A']
+rna = [""]
+
+for i in dna: 
+    if i in valid: 
         if 'T' == i:
             rna.append(transcript[i])
         else:
-            rna.append(dna[c])
-        c += 1
+            rna.append(i)
         
-    seq = ''.join(rna)
+seq = ''.join(rna)
     
-    print("DNA sequence:", dna, "\nRNA sequence:", seq)
+print("DNA sequence:", dna, "\nRNA sequence:", seq)
