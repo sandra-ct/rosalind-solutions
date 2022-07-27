@@ -1,16 +1,16 @@
-transcript = {'T':'U'}
+with open(r"rosalind_rna.txt") as file:
+    transcript = {'T':'U'}
+    dna = str(file.read())
+    rna = [""]
+    c = 0
 
-dna = "GATGGAACTTGACTACGTAAATT"
-rna = [""]
-c = 0
-
-for i in dna: 
-    if 'T' == i:
-        rna.append(transcript[i])
-    else:
-        rna.append(dna[c])
-    c += 1
+    for i in dna: 
+        if 'T' == i:
+            rna.append(transcript[i])
+        else:
+            rna.append(dna[c])
+        c += 1
         
-seq = ''.join(rna)
+    seq = ''.join(rna)
     
-print("Old sequence:", dna, "\nRNA sequence:", seq)
+    print("DNA sequence:", dna, "\nRNA sequence:", seq)
