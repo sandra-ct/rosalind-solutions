@@ -1,0 +1,21 @@
+'''
+    Fibonacci sequence
+
+    Equations:
+        Fn = Fn-1 + Fn-2
+        Fn = Fn-1 + k*Fn-2 (modified for k pairs)
+        F1 = F2 = 1
+        
+    n = number of months
+    k = number of rabbit pairs produced by each pair of reproducing rabbits
+'''
+
+def rabbits(n,k):
+    if n == 0:
+        return 0
+    elif n == 1: 
+        return 1
+    else:
+        return rabbits(n-1, k) + (k * rabbits(n-2, k))
+
+print("Result is", rabbits(31,4))
