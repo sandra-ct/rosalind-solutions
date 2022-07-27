@@ -5,14 +5,14 @@ thymine = 0
 cytosine = 0
 guanine = 0
 
-for n in range(len(s)):
-    if s[n] == 'A':
+for n in s:
+    if n == 'A':
         adenine += 1
-    elif s[n] == 'C':
+    elif n == 'C':
         cytosine += 1
-    elif s[n] == 'G':
+    elif n == 'G':
         guanine += 1
-    elif s[n] == 'T':
+    elif n == 'T':
         thymine += 1
         
 print("There are", adenine, "adenine bases,", cytosine, "cytosine bases,", guanine, "guanine bases, and", thymine, "thymine bases.")
