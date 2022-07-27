@@ -1,0 +1,11 @@
+s = "We tried list and we tried dicts also we tried Zen"
+dict = {}
+
+for i in s.split(' '):
+    if i in dict:
+        dict[i] += 1
+    else:
+        dict[i] = 1
+
+for word, n in dict.items():
+  print(word, n)
