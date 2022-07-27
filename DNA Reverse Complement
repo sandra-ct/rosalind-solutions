@@ -1,0 +1,14 @@
+with open(r"rosalind_revc.txt") as file:
+    dna = str(file.read())
+
+complement = []
+reverse = {'T':'A', 'G':'C', 'A':'T', 'C':'G'}
+
+for i in dna: 
+    if i in reverse:
+        complement.append(reverse[i])
+        
+        
+newseq = ''.join(complement)[len(complement)::-1]
+    
+print("Original sequence:", dna, "\nReverse complement:", newseq)
