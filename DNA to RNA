@@ -3,7 +3,7 @@ with open(r"rosalind_rna.txt") as file:
 
 transcript = {'T':'U'}
 valid = ['C','G','T','A']
-rna = [""]
+rna = []
 
 for i in dna: 
     if i in valid: 
