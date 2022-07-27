@@ -1,0 +1,18 @@
+s = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+
+adenine = 0
+thymine = 0
+cytosine = 0
+guanine = 0
+
+for n in range(len(s)):
+    if s[n] == 'A':
+        adenine += 1
+    elif s[n] == 'C':
+        cytosine += 1
+    elif s[n] == 'G':
+        guanine += 1
+    elif s[n] == 'T':
+        thymine += 1
+        
+print("There are", adenine, "adenine bases,", cytosine, "cytosine bases,", guanine, "guanine bases, and", thymine, "thymine bases.")
