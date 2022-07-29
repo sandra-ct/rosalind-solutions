@@ -13,7 +13,7 @@ def total_gc(seq):
         total_gc += details["gc_count"]
         all_bases += len(details["nucleotide"])
     
-    return (total_gc / all_bases) * 100
+    return round((total_gc / all_bases) * 100, 6)
 
 def content(dna): 
     valid = ['A', 'C', 'G', 'T', 'U']
@@ -50,7 +50,7 @@ def content(dna):
             highest_percent = details["gc_percent"]
             highest_name = title 
     
-    print("The sequence with the highest GC percentage is", highest_name, "snd its percentage is", highest_percent)
+    print("The sequence with the highest GC percentage is", highest_name, "snd its percentage is", str(round(highest_percent, 6)))
     print("The total percentage of guanine and cytosine bases in the entire document is", total_gc(sequences)) 
 
 content(seq)
