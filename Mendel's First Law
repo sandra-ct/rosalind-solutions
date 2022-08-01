@@ -1,0 +1,22 @@
+with open(r"mendel_ex.txt") as file:
+   seq = file.read().split()
+   
+def mendel(info):
+    homozygous_dominant = int(info[0])
+    heterozygous = int(info[1])
+    homozygous_recessive = int(info[2])
+    
+    print("There are", homozygous_dominant, "homozygous dominant individuals,", heterozygous, "heterozygous individuals, and", homozygous_recessive, "homozygous recessive individuals.")
+    
+    total_pop = homozygous_dominant + heterozygous + homozygous_recessive
+    
+    recessive_prob = (homozygous_recessive / total_pop) * ((homozygous_recessive - 1) / (total_pop - 1))
+    heterozygous_prob = (heterozygous / total_pop) * ((heterozygous - 1) / (total_pop - 1))
+    recessive_hetero_prob = (homozygous_recessive / total_pop) * (heterozygous / (total_pop - 1)) + (heterozygous / total_pop) * (homozygous_recessive / (total_pop - 1))
+    
+    total_recessive_prob = recessive_prob + (heterozygous_prob * 0.25) + (recessive_hetero_prob * 0.5)
+    dominant_prob = 1 - (total_recessive_prob)
+    
+    print("Total percent chance of dominant allele is", round(dominant_prob, 5))
+    
+mendel(seq)
