@@ -1,0 +1,44 @@
+# Translating RNA to Protein
+
+with open(r"C:\Users\Sandra\Desktop\rosalind\rosalind_prot.txt") as file:
+   seq = file.read()
+
+phenylalanine = ('UUU', 'UUC')
+leucine = ('UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG')
+isoleucine = ('AUU', 'AUC', 'AUA')
+valine = ('GUU', 'GUC', 'GUA', 'GUG')
+alanine = ('GCU', 'GCC', 'GCA', 'GCG')
+aspartic_acid = ('GAU', 'GAC')
+glutamic_acid = ('GAA', 'GAG')
+glycine = ('GGU', 'GGC', 'GGA', 'GGG')
+arginine = ('CGU', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG')
+serine = ('AGU', 'AGC', 'UCU', 'UCC', 'UCA', 'UCG')
+proline = ('CCU', 'CCC', 'CCA', 'CCG')
+threonine = ('ACU', 'ACC', 'ACA', 'ACG')
+histidine = ('CAU', 'CAC')
+glutamine = ('CAA', 'CAG')
+asparagine = ('AAU', 'AAC')
+lysine = ('AAA', 'AAG')
+tyrosine = ('UAU', 'UAC')
+tryptophan = ('UGG')
+cytesine = ('UGU', 'UGC')
+stop_codon = ('UAA', 'UAG', 'UGA')
+start_codon = ('AUG')
+
+translation = {phenylalanine:'F', leucine:'L', isoleucine:'I', valine:'V', alanine:'A', aspartic_acid:'D', glutamic_acid:'E', 
+               glycine:'G', arginine:'R', serine:'S', proline:'P', threonine:'T', histidine:'H', glutamine:'Q',
+               asparagine:'N', lysine:'K', tyrosine:'Y', tryptophan:'W', stop_codon:'Stop', start_codon:'M', cytesine:'C'}
+
+def translate(sequence):
+    proteins = []
+    
+    for base in range(0,len(sequence), 3):
+        for key, val in translation.items():
+            if sequence[base:base+3] in key:
+                proteins += val
+                break
+                
+    proteins = ''.join(proteins).replace('Stop', '')
+    print(proteins)
+        
+translate(seq)
