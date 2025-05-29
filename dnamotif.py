@@ -2,7 +2,7 @@
 
 import regex as re
 
-with open (r"Downloads\rosalind_subs (4).txt", 'r') as file:
+with open (r"rosalind_subs.txt", 'r') as file:
     content = file.read()
 seq_raw, sub_seq = content.splitlines() # seq = s, sub_seq = t
 
