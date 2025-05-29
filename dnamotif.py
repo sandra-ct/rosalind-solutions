@@ -1,4 +1,4 @@
-# rosalind - finding a motif in DNA
+# rosalind - finding a motif in DNA (2025)
 
 import regex as re
 
