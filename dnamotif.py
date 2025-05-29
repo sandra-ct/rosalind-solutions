@@ -1,6 +1,6 @@
 # rosalind - finding a motif in DNA (2025)
 
-import regex as re
+import re
 
 with open (r"rosalind_subs.txt", 'r') as file:
     content = file.read()
